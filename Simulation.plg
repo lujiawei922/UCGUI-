@@ -6,7 +6,13 @@
 --------------------Configuration: SimulationShip - Win32 Release--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating temporary file "C:\Users\user\AppData\Local\Temp\RSP8A36.tmp" with contents
+Creating temporary file "C:\Users\user\AppData\Local\Temp\RSP65DD.tmp" with contents
+[
+/nologo /G5 /MT /W3 /GX /O1 /I "Config" /I "GUI\Core" /I "GUI\Widget" /I "GUI\WM" /I "Simulation" /D "LCD_USE_WINSIM" /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D "_MBCS" /Fo"Release/" /Fd"Release/" /FD /c 
+"E:\ucgui¿â\UCGUI_Project\Application\main.c"
+]
+Creating command line "cl.exe @C:\Users\user\AppData\Local\Temp\RSP65DD.tmp" 
+Creating temporary file "C:\Users\user\AppData\Local\Temp\RSP65DE.tmp" with contents
 [
 libcmt.lib libc.lib Simulation\GUISim.lib Simulation\Simulation.res winmm.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /pdb:none /map:"Release/GUISimulation.map" /machine:I386 /out:"Exe/GUISimulation.exe" 
 ".\Release\main.obj"
@@ -263,8 +269,11 @@ libcmt.lib libc.lib Simulation\GUISim.lib Simulation\Simulation.res winmm.lib ke
 ".\Release\WMTouch.obj"
 ".\Release\SIM_X.obj"
 ]
-Creating command line "link.exe @C:\Users\user\AppData\Local\Temp\RSP8A36.tmp"
+Creating command line "link.exe @C:\Users\user\AppData\Local\Temp\RSP65DE.tmp"
 <h3>Output Window</h3>
+Compiling...
+main.c
+E:\ucgui¿â\UCGUI_Project\Application\main.c(55) : warning C4101: 'tem_point' : unreferenced local variable
 Linking...
 
 
