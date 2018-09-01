@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>SimulationShip</ProjectName>
+    <SccProjectName />
+    <SccLocalPath />
+    <ProjectGuid>{9ED4B98E-398E-40EA-8C71-A3CDF0AA52AE}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>Config;GUI\Core;GUI\Widget;GUI\WM;Simulation;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LCD_USE_WINSIM;_DEBUG;WIN32;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Debug\Simulation.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Debug\Simulation.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0407</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\Simulation.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <OutputFile>.\Debug\Simulation.exe</OutputFile>
+      <AdditionalDependencies>Simulation\GUISim.lib;Simulation\Simulation.res;winmm.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MinSpace</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>Config;GUI\Core;GUI\Widget;GUI\WM;Simulation;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LCD_USE_WINSIM;NDEBUG;WIN32;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Release\Simulation.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Release\Simulation.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0407</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\Simulation.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <OutputFile>Exe/GUISimulation.exe</OutputFile>
+      <AdditionalDependencies>libcmt.lib;libc.lib;Simulation\GUISim.lib;Simulation\Simulation.res;winmm.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Application\main.c" />
+    <ClCompile Include="Application\MicriumLogo.C" />
+    <ClCompile Include="Application\MicriumLogo_1bpp.c" />
+    <ClCompile Include="gui\ConvertColor\LCDP111.c" />
+    <ClCompile Include="gui\ConvertColor\LCDP222.c" />
+    <ClCompile Include="gui\ConvertColor\LCDP233.c" />
+    <ClCompile Include="gui\ConvertColor\LCDP323.c" />
+    <ClCompile Include="gui\ConvertColor\LCDP332.c" />
+    <ClCompile Include="gui\ConvertColor\LCDP444.c" />
+    <ClCompile Include="gui\ConvertColor\LCDP555.c" />
+    <ClCompile Include="gui\ConvertColor\LCDP565.c" />
+    <ClCompile Include="gui\ConvertColor\LCDP8666.c" />
+    <ClCompile Include="gui\ConvertColor\LCDPM233.c" />
+    <ClCompile Include="gui\ConvertColor\LCDPM323.c" />
+    <ClCompile Include="gui\ConvertColor\LCDPM332.c" />
+    <ClCompile Include="gui\ConvertColor\LCDPM555.c" />
+    <ClCompile Include="gui\ConvertColor\LCDPM565.c" />
+    <ClCompile Include="gui\ConvertMono\LCDP0.c" />
+    <ClCompile Include="gui\ConvertMono\LCDP1.c" />
+    <ClCompile Include="gui\ConvertMono\LCDP2.c" />
+    <ClCompile Include="gui\ConvertMono\LCDP4.c" />
+    <ClCompile Include="gui\Core\gui2dlib.c" />
+    <ClCompile Include="gui\Core\GUIAlloc.c" />
+    <ClCompile Include="gui\Core\guiarc.c" />
+    <ClCompile Include="gui\Core\GUIChar.c" />
+    <ClCompile Include="gui\Core\GUIChar0.c" />
+    <ClCompile Include="gui\Core\GUICharM.c" />
+    <ClCompile Include="gui\Core\GUICharP.c" />
+    <ClCompile Include="gui\Core\GUICirc.c" />
+    <ClCompile Include="gui\Core\GUIColor2Index.c" />
+    <ClCompile Include="gui\Core\GUICore.c" />
+    <ClCompile Include="gui\Core\GUICurs.c" />
+    <ClCompile Include="gui\Core\GUIEncJS.c" />
+    <ClCompile Include="gui\Core\GUIIndex2Color.c" />
+    <ClCompile Include="gui\Core\GUIPolyE.c" />
+    <ClCompile Include="gui\Core\GUIPolyM.c" />
+    <ClCompile Include="gui\Core\GUIPolyR.c" />
+    <ClCompile Include="gui\Core\GUIStream.c" />
+    <ClCompile Include="gui\Core\guitask.c" />
+    <ClCompile Include="gui\Core\GUITime.c" />
+    <ClCompile Include="gui\Core\guitimer.c" />
+    <ClCompile Include="gui\Core\GUIUC0.c" />
+    <ClCompile Include="gui\Core\GUIUC1.c" />
+    <ClCompile Include="gui\Core\GUIVal.c" />
+    <ClCompile Include="gui\Core\GUIValf.c" />
+    <ClCompile Include="gui\Core\GUI_AddBin.c" />
+    <ClCompile Include="gui\Core\GUI_AddDec.c" />
+    <ClCompile Include="gui\Core\GUI_AddHex.c" />
+    <ClCompile Include="gui\Core\GUI_Color2VisColor.c" />
+    <ClCompile Include="gui\Core\GUI_DispBin.c" />
+    <ClCompile Include="gui\Core\GUI_DispHex.c" />
+    <ClCompile Include="gui\Core\GUI_DispStringInRect.c" />
+    <ClCompile Include="gui\Core\GUI_DrawBitmap.c" />
+    <ClCompile Include="gui\Core\GUI_DrawBitmapExp.c" />
+    <ClCompile Include="gui\Core\GUI_DrawBitmapMag.c" />
+    <ClCompile Include="gui\Core\GUI_DrawFocusRect.c" />
+    <ClCompile Include="gui\Core\GUI_DrawGraph.c" />
+    <ClCompile Include="gui\Core\GUI_DrawHLine.c" />
+    <ClCompile Include="gui\Core\GUI_DrawPie.c" />
+    <ClCompile Include="gui\Core\GUI_DrawPixel.c" />
+    <ClCompile Include="gui\Core\GUI_DrawPolyline.c" />
+    <ClCompile Include="gui\Core\GUI_DrawRectEx.c" />
+    <ClCompile Include="gui\Core\GUI_DrawVLine.c" />
+    <ClCompile Include="gui\Core\GUI_ErrorOut.c" />
+    <ClCompile Include="gui\Core\GUI_Exec.c" />
+    <ClCompile Include="gui\Core\GUI_FillPolygon.c" />
+    <ClCompile Include="gui\Core\GUI_FillRect.c" />
+    <ClCompile Include="gui\Core\GUI_FillRectEx.c" />
+    <ClCompile Include="gui\Core\GUI_GetClientRect.c" />
+    <ClCompile Include="gui\Core\GUI_GetColor.c" />
+    <ClCompile Include="gui\Core\GUI_GetFontInfo.c" />
+    <ClCompile Include="gui\Core\GUI_GetTextExtend.c" />
+    <ClCompile Include="gui\Core\GUI_GetVersionString.c" />
+    <ClCompile Include="gui\Core\GUI_InitLUT.c" />
+    <ClCompile Include="gui\Core\GUI_InvertRect.c" />
+    <ClCompile Include="gui\Core\GUI_Log.c" />
+    <ClCompile Include="gui\Core\GUI_MergeRect.c" />
+    <ClCompile Include="gui\Core\GUI_MOUSE.c" />
+    <ClCompile Include="gui\Core\GUI_MouseArrow.c" />
+    <ClCompile Include="gui\Core\GUI_MouseNoDrop.c" />
+    <ClCompile Include="gui\Core\GUI_MoveRect.c" />
+    <ClCompile Include="gui\Core\GUI_OnKey.c" />
+    <ClCompile Include="gui\Core\GUI_Pen.c" />
+    <ClCompile Include="gui\Core\GUI_RectsIntersect.c" />
+    <ClCompile Include="gui\Core\GUI_SaveContext.c" />
+    <ClCompile Include="gui\Core\GUI_SelLCD.c" />
+    <ClCompile Include="gui\Core\GUI_SetColorIndex.c" />
+    <ClCompile Include="gui\Core\GUI_SetDecChar.c" />
+    <ClCompile Include="gui\Core\GUI_SetDefault.c" />
+    <ClCompile Include="gui\Core\GUI_SetLUTEntry.c" />
+    <ClCompile Include="gui\Core\GUI_SetOrg.c" />
+    <ClCompile Include="gui\Core\GUI_SetPhysColor.c" />
+    <ClCompile Include="gui\Core\GUI_StreamBMP.c" />
+    <ClCompile Include="gui\Core\GUI_TOUCH.c" />
+    <ClCompile Include="gui\Core\GUI_WaitKey.c" />
+    <ClCompile Include="gui\Core\GUI_Warn.c" />
+    <ClCompile Include="gui\Core\GUI__AddSpaceHex.c" />
+    <ClCompile Include="gui\Core\GUI__DivideRound.c" />
+    <ClCompile Include="gui\Core\GUI__IntersectRect.c" />
+    <ClCompile Include="gui\Core\GUI__IntersectRects.c" />
+    <ClCompile Include="gui\Core\GUI__ReduceRect.c" />
+    <ClCompile Include="gui\Core\LCD.c" />
+    <ClCompile Include="gui\Core\LCDAA.c" />
+    <ClCompile Include="gui\Core\LCDColor.c" />
+    <ClCompile Include="gui\Core\LCDGetP.c" />
+    <ClCompile Include="gui\Core\LCDInfo.c" />
+    <ClCompile Include="gui\Core\LCDInfo0.c" />
+    <ClCompile Include="gui\Core\LCDInfo1.c" />
+    <ClCompile Include="gui\Core\LCDL0Mag.c" />
+    <ClCompile Include="gui\Core\LCDRLE4.c" />
+    <ClCompile Include="gui\Core\LCDRLE8.c" />
+    <ClCompile Include="gui\Core\LCD_GetColorIndex.c" />
+    <ClCompile Include="gui\Core\LCD_GetNumDisplays.c" />
+    <ClCompile Include="gui\Core\LCD_GetPixelColor.c" />
+    <ClCompile Include="gui\Core\LCD_L0_Generic.c" />
+    <ClCompile Include="gui\Font\F08_1.c" />
+    <ClCompile Include="gui\Font\F08_ASCII.c" />
+    <ClCompile Include="gui\Font\F10S_1.c" />
+    <ClCompile Include="gui\Font\F10S_ASCII.c" />
+    <ClCompile Include="gui\Font\F10_1.c" />
+    <ClCompile Include="gui\Font\F10_ASCII.c" />
+    <ClCompile Include="gui\Font\F13B_1.c" />
+    <ClCompile Include="gui\Font\F13B_ASCII.c" />
+    <ClCompile Include="gui\Font\F13HB_1.c" />
+    <ClCompile Include="gui\Font\F13HB_ASCII.c" />
+    <ClCompile Include="gui\Font\F13H_1.c" />
+    <ClCompile Include="gui\Font\F13H_ASCII.c" />
+    <ClCompile Include="gui\Font\F13_1.c" />
+    <ClCompile Include="gui\Font\F13_ASCII.c" />
+    <ClCompile Include="gui\Font\F16B_1.c" />
+    <ClCompile Include="gui\Font\F16B_ASCII.c" />
+    <ClCompile Include="gui\Font\F16_1.c" />
+    <ClCompile Include="gui\Font\F16_1HK.c" />
+    <ClCompile Include="gui\Font\F16_ASCII.c" />
+    <ClCompile Include="gui\Font\F16_HK.c" />
+    <ClCompile Include="gui\Font\F24B_1.c" />
+    <ClCompile Include="gui\Font\F24B_ASCII.c" />
+    <ClCompile Include="gui\Font\F24_1.c" />
+    <ClCompile Include="gui\Font\F24_ASCII.c" />
+    <ClCompile Include="gui\Font\F32B_1.c" />
+    <ClCompile Include="gui\Font\F32B_ASCII.c" />
+    <ClCompile Include="gui\Font\F32_1.c" />
+    <ClCompile Include="gui\Font\F32_ASCII.c" />
+    <ClCompile Include="gui\Font\F4x6.c" />
+    <ClCompile Include="gui\Font\F6x8.C" />
+    <ClCompile Include="gui\Font\F8x10_ASCII.c" />
+    <ClCompile Include="gui\Font\F8x12_ASCII.c" />
+    <ClCompile Include="gui\Font\F8x13.c" />
+    <ClCompile Include="gui\Font\F8x13_1.c" />
+    <ClCompile Include="gui\Font\F8x13_ASCII.c" />
+    <ClCompile Include="gui\Font\F8x15B.c" />
+    <ClCompile Include="gui\Font\F8x15B_1.c" />
+    <ClCompile Include="gui\Font\F8x15B_ASCII.c" />
+    <ClCompile Include="gui\Font\F8x16.c" />
+    <ClCompile Include="gui\Font\F8x8.c" />
+    <ClCompile Include="gui\Font\FComic18B_1.c" />
+    <ClCompile Include="gui\Font\FComic18B_ASCII.c" />
+    <ClCompile Include="gui\Font\FComic24B_1.c" />
+    <ClCompile Include="gui\Font\FComic24B_ASCII.c" />
+    <ClCompile Include="gui\Font\FD24x32.c" />
+    <ClCompile Include="gui\Font\FD32.c" />
+    <ClCompile Include="Gui\LCDDriver\LCDWin.c" />
+    <ClCompile Include="gui\MemDev\GUIDEV.c" />
+    <ClCompile Include="gui\MemDev\GUIDEV_AA.c" />
+    <ClCompile Include="gui\MemDev\GUIDEV_Auto.c" />
+    <ClCompile Include="gui\MemDev\GUIDEV_Banding.c" />
+    <ClCompile Include="gui\MemDev\GUIDEV_Clear.c" />
+    <ClCompile Include="gui\MemDev\GUIDEV_CmpWithLCD.c" />
+    <ClCompile Include="gui\MemDev\GUIDEV_CopyFromLCD.c" />
+    <ClCompile Include="gui\MemDev\GUIDEV_GetYSize.c" />
+    <ClCompile Include="gui\MemDev\GUIDEV_Measure.c" />
+    <ClCompile Include="gui\MemDev\GUIDEV_ReduceYSize.c" />
+    <ClCompile Include="gui\MemDev\GUIDEV_SetOrg.c" />
+    <ClCompile Include="gui\MemDev\GUIDEV_Usage.c" />
+    <ClCompile Include="gui\MemDev\GUIDEV_UsageBM.c" />
+    <ClCompile Include="gui\Widget\button.c" />
+    <ClCompile Include="gui\Widget\Checkbox.c" />
+    <ClCompile Include="gui\Widget\Dialog.c" />
+    <ClCompile Include="gui\Widget\edit.c" />
+    <ClCompile Include="gui\Widget\EditBin.c" />
+    <ClCompile Include="gui\Widget\EditDec.c" />
+    <ClCompile Include="gui\Widget\EditFloat.c" />
+    <ClCompile Include="gui\Widget\EditHex.c" />
+    <ClCompile Include="gui\Widget\framewin.c" />
+    <ClCompile Include="gui\Widget\GUI_EditBin.c" />
+    <ClCompile Include="gui\Widget\GUI_EditDec.c" />
+    <ClCompile Include="gui\Widget\GUI_EditFloat.c" />
+    <ClCompile Include="gui\Widget\GUI_EditHex.c" />
+    <ClCompile Include="gui\Widget\GUI_EditString.c" />
+    <ClCompile Include="gui\Widget\listbox.c" />
+    <ClCompile Include="gui\Widget\marquee.c" />
+    <ClCompile Include="gui\Widget\messagebox.c" />
+    <ClCompile Include="gui\Widget\progbar.c" />
+    <ClCompile Include="gui\Widget\Radio.c" />
+    <ClCompile Include="gui\Widget\Scrollbar.c" />
+    <ClCompile Include="gui\Widget\Slider.c" />
+    <ClCompile Include="gui\Widget\Terminal.c" />
+    <ClCompile Include="gui\Widget\Text.c" />
+    <ClCompile Include="gui\Widget\Widget.c" />
+    <ClCompile Include="gui\Widget\Widget_3D.c" />
+    <ClCompile Include="gui\Widget\Widget_None.c" />
+    <ClCompile Include="gui\Widget\Widget_Simple.c" />
+    <ClCompile Include="gui\WM\wm.c" />
+    <ClCompile Include="gui\WM\WMMemDev.c" />
+    <ClCompile Include="gui\WM\WMTouch.c" />
+    <ClCompile Include="gui\WM\WM_BringToBottom.c" />
+    <ClCompile Include="gui\WM\WM_BringToTop.c" />
+    <ClCompile Include="gui\WM\WM_Broadcast.c" />
+    <ClCompile Include="gui\WM\WM_EnableWindow.c" />
+    <ClCompile Include="gui\WM\WM_GetBkColor.c" />
+    <ClCompile Include="gui\WM\WM_GetClientRect.c" />
+    <ClCompile Include="gui\WM\WM_GetClientWindow.c" />
+    <ClCompile Include="gui\WM\WM_GetDialogItem.c" />
+    <ClCompile Include="gui\WM\WM_GetFirstChild.c" />
+    <ClCompile Include="gui\WM\WM_GetFocussedChild.c" />
+    <ClCompile Include="gui\WM\WM_GetId.c" />
+    <ClCompile Include="gui\WM\WM_GetInsideRect.c" />
+    <ClCompile Include="gui\WM\WM_GetNextSibling.c" />
+    <ClCompile Include="gui\WM\WM_GetOrg.c" />
+    <ClCompile Include="gui\WM\WM_GetParent.c" />
+    <ClCompile Include="gui\WM\WM_GetScrollState.c" />
+    <ClCompile Include="gui\WM\WM_GetWindowRect.c" />
+    <ClCompile Include="gui\WM\WM_GetWindowSize.c" />
+    <ClCompile Include="gui\WM\WM_HasCaptured.c" />
+    <ClCompile Include="gui\WM\WM_Hide.c" />
+    <ClCompile Include="gui\WM\WM_IsWindow.c" />
+    <ClCompile Include="gui\WM\WM_Move.c" />
+    <ClCompile Include="gui\WM\WM_NotifyParent.c" />
+    <ClCompile Include="gui\WM\WM_OnKey.c" />
+    <ClCompile Include="gui\WM\WM_Paint.c" />
+    <ClCompile Include="gui\WM\WM_ResizeWindow.c" />
+    <ClCompile Include="gui\WM\WM_Screen2Win.c" />
+    <ClCompile Include="gui\WM\WM_SendToParent.c" />
+    <ClCompile Include="gui\WM\WM_SetCallback.c" />
+    <ClCompile Include="gui\WM\WM_SetCapture.c" />
+    <ClCompile Include="gui\WM\WM_SetCreateFlags.c" />
+    <ClCompile Include="gui\WM\WM_SetDesktopColor.c" />
+    <ClCompile Include="gui\WM\WM_SetFocus.c" />
+    <ClCompile Include="gui\WM\WM_SetFocusOnNextChild.c" />
+    <ClCompile Include="gui\WM\WM_SetScrollState.c" />
+    <ClCompile Include="gui\WM\WM_SetSize.c" />
+    <ClCompile Include="gui\WM\WM_SetTrans.c" />
+    <ClCompile Include="gui\WM\WM_SetUserClipRect.c" />
+    <ClCompile Include="gui\WM\WM_Validate.c" />
+    <ClCompile Include="gui\WM\WM_ValidateWindow.c" />
+    <ClCompile Include="gui\WM\WM__GetFirstSibling.c" />
+    <ClCompile Include="gui\WM\WM__GetHasFocus.c" />
+    <ClCompile Include="gui\WM\WM__GetLastSibling.c" />
+    <ClCompile Include="gui\WM\WM__GetPrevSibling.c" />
+    <ClCompile Include="gui\WM\WM__Screen2Client.c" />
+    <ClCompile Include="gui\WM\WM__SendMessage.c" />
+    <ClCompile Include="gui\WM\WM__SendMessageNoPara.c" />
+    <ClCompile Include="Simulation\SIM_X.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Config\GUICONF.H" />
+    <ClInclude Include="Config\GUITouchConf.h" />
+    <ClInclude Include="Config\LCDConf.H" />
+    <ClInclude Include="Gui\Core\GUI.H" />
+    <ClInclude Include="Gui\Core\guidebug.h" />
+    <ClInclude Include="Gui\Core\GUITYPE.H" />
+    <ClInclude Include="Gui\Core\GUI_Private.h" />
+    <ClInclude Include="Gui\Core\GUI_Protected.h" />
+    <ClInclude Include="gui\core\GUI_X.h" />
+    <ClInclude Include="Gui\Core\LCD.H" />
+    <ClInclude Include="Gui\Core\LCD_ConfDefaults.h" />
+    <ClInclude Include="Gui\Core\LCD_Private.h" />
+    <ClInclude Include="Gui\Core\LCD_Protected.h" />
+    <ClInclude Include="gui\Widget\button.h" />
+    <ClInclude Include="gui\Widget\Checkbox.h" />
+    <ClInclude Include="gui\Widget\Dialog.h" />
+    <ClInclude Include="gui\Widget\Dialog_Intern.h" />
+    <ClInclude Include="gui\Widget\Edit.h" />
+    <ClInclude Include="gui\Widget\Edit_Private.h" />
+    <ClInclude Include="gui\Widget\FrameWin.h" />
+    <ClInclude Include="gui\Widget\LISTBOX.h" />
+    <ClInclude Include="gui\Widget\Marquee.h" />
+    <ClInclude Include="gui\Widget\ProgBar.h" />
+    <ClInclude Include="gui\Widget\Radio.h" />
+    <ClInclude Include="gui\Widget\Scrollbar.h" />
+    <ClInclude Include="gui\Widget\Slider.h" />
+    <ClInclude Include="gui\Widget\Terminal.h" />
+    <ClInclude Include="gui\Widget\Text.h" />
+    <ClInclude Include="gui\Widget\Widget.h" />
+    <ClInclude Include="gui\WM\WM.H" />
+    <ClInclude Include="gui\WM\WM_Intern.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
